@@ -62,6 +62,12 @@ for i in range(len(line)):
     if line[i] == 0:
         start = i
         length += 1
+        if i == len(line) - 1:
+            if maxlength / 2 < length:
+                print(i)
+                break
+            else:
+                print(int(numpy.mean([index_of_final_length - maxlength, index_of_final_length-1])))
     else:
         if maxlength < length:
             maxlength = length
